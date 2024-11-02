@@ -45,8 +45,9 @@ download_playlist() {
     pl="https://youtube.com/playlist?list=PLQL6z4JeTTQk_z3vwSIvn6wIHMeNQFU3d&si=tyzV89mymAqAdb5Y"
     echo -e "----------------------------"
     echo -e "Downloading playlist..."
-    uvx yt-dlp@latest $pl \
-        --yes-playlist --sleep-interval 5 --format 'bestvideo*+bestaudio' \
+    uvx yt-dlp $pl \
+        --yes-playlist \
+        --format 'bestvideo*+bestaudio' \
         --output "%(playlist_index)s - %(title)s.%(ext)s"
 }
 
